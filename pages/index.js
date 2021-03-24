@@ -1,4 +1,5 @@
 import Layout from '../components/Layout'
+import { skills, experiencies } from '../profile'
 
 const Index = () => (
     <Layout>
@@ -21,18 +22,43 @@ const Index = () => (
             </div>
         </header>
         {/** segunda seccion**/}
-        <div className="row">
+        <div className="row py-2">
             <div className="col-md-4">
                 <div className="card bg-light">
                     <div className="card-body">
                         <h1>Habilidades</h1>
+
+                        {
+                            skills.map(({ skill, percentage }, i) => (
+                                <div className="py-3" key={i}>
+                                    <h5>{skill}</h5>
+                                    <div className="progress">
+                                        <div className="progress-bar" role="progressbar" style={{ width: `${percentage}%` }}></div>
+                                    </div>
+                                </div>
+                            ))
+                        }
+
                     </div>
                 </div>
-                <div className="col-md-8">
-                    <div className="card bg-light">
-                        <div className="card-body">
-                            <h1>Experiencia</h1>
-                        </div>
+            </div>
+            <div className="col-md-8">
+                <div className="card bg-light">
+                    <div className="card-body">
+                        <h1>Experiencia</h1>
+                        <ul>
+                            {
+                                experiencies.map(({title, description, from, to}, index) => (
+                                    <li key={index}>
+                                        <h3>{title}</h3>
+                                        <h5>{from} - {to ? ` ${to}` : " Actualmente"}</h5>
+                                        <p>
+                                            {description}
+                                        </p>
+                                    </li>
+                                ))
+                            }
+                        </ul>
                     </div>
                 </div>
             </div>
