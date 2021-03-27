@@ -63,6 +63,23 @@ const Index = () => (
                 </div>
             </div>
         </div>
+        {/** tercera seccion**/}
+        <div className="row">
+            <div className="col-md-12">
+                <div className="card card-body bg-dark">
+                    <div className="row">
+                        <div className="col-md-12">
+                            <h1 className="text-center text-light">Portafolio</h1>
+                        </div>
+                        <div className="col-md-4">
+                            <div className="card">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </Layout>
 )
 
